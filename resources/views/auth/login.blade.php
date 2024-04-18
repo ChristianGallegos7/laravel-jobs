@@ -28,19 +28,26 @@
         <div class="block mt-4">
             <label for="remember_me" class="inline-flex items-center">
                 <input id="remember_me" type="checkbox" class="rounded border-gray-300 text-indigo-600 shadow-sm focus:ring-indigo-500" name="remember">
-                <span class="ms-2 text-sm text-gray-600">{{ __('Recuerdame') }}</span>
+                <span class="ms-2 text-sm text-gray-600">{{ __('Recordarme') }}</span>
             </label>
         </div>
 
-        <div class="flex items-center justify-end mt-4">
+        <div class="flex items-center justify-between mt-4">
             {{-- componente link mio para poder reutilizarlo en todo los lugares que quiera --}}
-            <x-link>
-                Que paso? Olvidaste tu contraseña?
+            <x-link
+                :href="route('password.request')"
+            >
+               {{ __('Olvidaste tu contraseña?')}}
             </x-link>
 
-            <x-primary-button class="ms-3">
-                {{ __('Inicia Sesión') }}
-            </x-primary-button>
+            <x-link
+                :href="route('register')"
+            >
+                {{ __('Crear Cuenta')}}
+            </x-link>
         </div>
+        <x-primary-button class="mt-3 w-full justify-center">
+            {{ __('Inicia Sesión') }}
+        </x-primary-button>
     </form>
 </x-guest-layout>
