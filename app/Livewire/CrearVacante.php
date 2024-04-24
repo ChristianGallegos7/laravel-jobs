@@ -55,9 +55,10 @@ class CrearVacante extends Component
         ]);
 
         //Crear un mensaje
+        session()->flash('mensaje', 'La vacante se publico correctamente');
 
         //Redireccionar a mis vacantes
-
+        return redirect()->route('vacantes.index');
 
     }
 
